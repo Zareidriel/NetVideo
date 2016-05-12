@@ -55,33 +55,33 @@ std::string Customer::statement() const {
         result += it->getVideo().getTitle();
         result += "\t";
 
-        double thisAmount = 0;
+        double videoPrice = 0;
         switch(it->getVideo().getCode()) {
 
             case Video::REGULAR:
-            thisAmount += 2;
+            videoPrice += 2;
             if (it->getDaysRented() > 2)
-                thisAmount += (it->getDaysRented() - 2) * 1.5;
+                videoPrice += (it->getDaysRented() - 2) * 1.5;
             break;
 
             case Video::NEW_RELEASE:
-            thisAmount += it->getDaysRented() * 3;
+            videoPrice += it->getDaysRented() * 3;
             break;
 
             case Video::CHILDRENS:
-            thisAmount += 1.5;
+            videoPrice += 1.5;
             if (it->getDaysRented() > 3)
-                thisAmount += (it->getDaysRented() - 3) * 1.5;
+                videoPrice += (it->getDaysRented() - 3) * 1.5;
             break;
         }
 
         // amount of rental
         std::ostringstream out_str_stream;
-        out_str_stream << thisAmount;
+        out_str_stream << videoPrice;
         result += out_str_stream.str();
         result += "\n";
 
-        totalAmount += thisAmount;
+        totalAmount += videoPrice;
     }
 
     // total amount owed
