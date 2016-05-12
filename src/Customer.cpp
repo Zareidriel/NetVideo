@@ -1,27 +1,4 @@
-/*
-  Customer.cpp
 
-  Definition file for Customer class
-*/
-
-#include "Customer.hpp"
-#include "Video.hpp"
-
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <vector>
-
-// constructor
-Customer::Customer(const std::string& name)
-    : name(name)
-{ }
-
-// customer name
-std::string Customer::getName() const {
-
-    return name;
-}
 
 // add a rental to this customer
 void Customer::addRental(const Rental& rental) {
