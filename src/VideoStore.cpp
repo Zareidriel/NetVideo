@@ -1,5 +1,7 @@
 /*
   VideoStore.cpp
+  
+  Renamed to make more sense
 
   Basic operations of a video store
 */
