@@ -91,12 +91,5 @@ std::string Customer::statement() const {
     result += out_str_stream.str();
     result += "\n";
 
-    // frequent renter points earned
-    result += "You earned: ";
-    std::ostringstream out_str_stream2;
-    out_str_stream2 << frequentRenterPoints;
-    result += out_str_stream2.str();
-    result += " frequent renter points\n";
-
     return result;
 }
